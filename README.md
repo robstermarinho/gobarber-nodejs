@@ -1,14 +1,14 @@
-# JS Libraries
+## JS Libraries
 
-## sucrase
+### sucrase
 
 Sucrase is an alternative to Babel that allows super-fast development builds.
 
-## nodemon
+### nodemon
 
 Nodemon is a utility that will monitor for any changes in the source and automatically restart the server.
 
-# Docker
+## Docker
 
 #### Install Postgress container
 
@@ -31,11 +31,39 @@ docker ps -a
 docker logs {ID}
 ```
 
-# ES LINT
+Start/Stop Container
+
+```
+docker start {NAME/ID}
+docker stop {NAME/ID}
+```
+
+## ES LINT
 
 ```
 yarn eslint --init
 
 # Fix all files in the src folder
 yarn eslint --fix .\src\ --ext .js
+```
+
+## Migrations
+
+Create migration file with the sequelize CLI
+
+```
+yarn sequelize migration:create --name=create-users
+```
+
+Run migrations
+
+```
+# Migrate
+yarn sequelize db:migrate
+
+# Undo Last
+yarn sequelize db:migrate:undo
+
+# Undo All
+yarn sequelize db:migrate:undo:all
 ```

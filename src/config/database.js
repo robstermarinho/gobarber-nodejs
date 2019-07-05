@@ -1,8 +1,8 @@
 module.exports = {
   dialect: 'postgres',
   host: 'localhost',
-  username: 'porstgres',
-  password: 'deswq',
+  username: 'postgres',
+  password: 'deswaq',
   database: 'gobarber',
   define: {
     timestamps: true,
