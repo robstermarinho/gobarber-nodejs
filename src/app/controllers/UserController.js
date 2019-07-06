@@ -18,6 +18,13 @@ class UserController {
     const { id, name, email, provider } = await User.create(req.body);
     return res.json({ id, name, email, provider });
   }
+
+  async update(req, res) {
+    const user = await User.findOne({
+      where: { id: req.userID },
+    });
+    return res.json({ ok: true, user });
+  }
 }
 
 export default new UserController();
