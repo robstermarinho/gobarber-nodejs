@@ -76,9 +76,12 @@ class UserController {
       return res.status(401).json({ error: 'Password does not match!' });
     }
 
-    const { id, name, provider } = await user.update(req.body);
+    const { id, name, provider, avatar_id } = await user.update(req.body);
 
-    return res.json({ ok: true, user: { id, name, email, provider } });
+    return res.json({
+      ok: true,
+      user: { id, name, email, provider, avatar_id },
+    });
   }
 }
 
