@@ -23,6 +23,19 @@ class NotificationsController {
       .limit(20);
     return res.json(notifications);
   }
+
+  async update(req, res) {
+    // const notification = await Notification.findById(req.params.id);
+    const notification = await Notification.findOneAndUpdate(
+      req.params.id,
+      {
+        read: true,
+      },
+      { new: true } // Return the new register
+    );
+
+    return res.json(notification);
+  }
 }
 
 export default new NotificationsController();
