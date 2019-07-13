@@ -30,6 +30,7 @@ class User extends Model {
       foreignKey: 'avatar_id',
       as: 'avatar',
     });
+
     // this.hasOne
     // this.hasMany
   }
