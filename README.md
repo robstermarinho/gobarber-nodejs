@@ -1,3 +1,5 @@
+# Gobarber backend - NodeJS
+
 NodeJS API to manage users and providers and schedule/cancel appointments. It also handle notifications and emails.
 
 ### Run the app
