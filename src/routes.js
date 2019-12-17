@@ -14,14 +14,7 @@ import AvailableController from './app/controllers/AvailableController';
 
 const routes = new Router();
 const upload = new Multer(multerConfig);
-routes.get('/test_create_user', async (req, res) => {
-  const user = await User.create({
-    name: 'Robert Marinho',
-    email: 'robster.mr@gmail.com',
-    password_hash: '123456',
-  });
-  return res.json(user);
-});
+routes.get('/', () => ({ OK: 'OK' }));
 
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);

@@ -23,10 +23,17 @@ class ScheduleController {
           [Op.between]: [startOfDay(parseDate), endOfDay(parseDate)], // Using  the sequelize operator between to filter between dates
         },
       },
+      include: [
+        {
+          model: User,
+          as: 'user',
+          attributes: ['name'],
+        },
+      ],
       order: ['date'],
     });
 
-    return res.json({ appointments });
+    return res.json(appointments);
   }
 }
 
